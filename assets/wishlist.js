@@ -6,7 +6,7 @@ async function fetchWishlist() {
     }
 
     try {
-        const response = await fetch("https://snowberry.vercel.app/api/users/wishlist", {
+        const response = await fetch("https://snowberry.onrender.com/api/users/wishlist", {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` }
         });
@@ -22,7 +22,7 @@ async function loadWishlist() {
     let wishlist = [];
 
     if (token) {
-        const response = await fetch("https://snowberry.vercel.app/api/users/wishlist", { headers: { Authorization: `Bearer ${token}` } });
+        const response = await fetch("https://snowberry.onrender.com/api/users/wishlist", { headers: { Authorization: `Bearer ${token}` } });
         wishlist = await response.json();
     } else {
         // ✅ Ensure guestWishlist is always defined
@@ -30,7 +30,7 @@ async function loadWishlist() {
         console.log("🔍 Guest Wishlist Product IDs:", guestWishlist);
 
         wishlist = await Promise.all(guestWishlist.map(async (productId) => {
-            const res = await fetch(`https://snowberry.vercel.app/api/products/${productId}`);
+            const res = await fetch(`https://snowberry.onrender.com/api/products/${productId}`);
             return res.json();
         }));
 
@@ -76,7 +76,7 @@ function displayWishlist(wishlist) {
     });
 }  
 // 🛒 Function to add item to Cart (Guest & Logged-in Users)
-const CART_API = "https://snowberry.vercel.app/api/users/cart"; 
+const CART_API = "https://snowberry.onrender.com/api/users/cart"; 
 async function addToCart(productId) {
     const token = localStorage.getItem("authToken");
 
@@ -126,7 +126,7 @@ async function removeFromWishlist(productId) {
 
     if (token) {
         try {
-            const response = await fetch(`https://snowberry.vercel.app/api/users/wishlist/${productId}`, {
+            const response = await fetch(`https://snowberry.onrender.com/api/users/wishlist/${productId}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` }
             });

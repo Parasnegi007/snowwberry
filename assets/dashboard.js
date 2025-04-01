@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", async function () {
     }
 
     try {
-        const response = await fetch("https://snowberry.vercel.app/api/users/profile", {
+        const response = await fetch("https://snowberry.onrender.com/users/profile", {
             method: "GET",
             headers: { "Authorization": `Bearer ${token}` }
         });
@@ -117,7 +117,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         try {
             const token = localStorage.getItem("authToken");  // Get stored JWT token
 
-            const response = await fetch("https://snowberry.vercel.app/api/users/send-otp-update", {
+            const response = await fetch("https://snowberry.onrender.com/users/send-otp-update", {
                 method: "POST",
                 headers: { 
                     "Content-Type": "application/json",
@@ -176,7 +176,7 @@ window.addEventListener("DOMContentLoaded", async function () {
         }
 
         try {
-            const response = await fetch("https://snowberry.vercel.app/api/users/update-profile", {
+            const response = await fetch("https://snowberry.onrender.com/users/update-profile", {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

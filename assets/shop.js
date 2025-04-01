@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function loadCategories() {
         try {
-            const response = await fetch("https://snowberry.vercel.app/api/categories");
+            const response = await fetch("https://snowberry.onrender.com/api/categories");
             if (!response.ok) throw new Error("Failed to fetch categories");
     
             const categories = await response.json();

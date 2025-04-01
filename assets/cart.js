@@ -9,7 +9,7 @@ async function loadCart() {
     if (token) {
         // Fetch cart from backend for logged-in users
         try {
-            const response = await fetch("https://snowberry.vercel.app/api/users/cart", {
+            const response = await fetch("https://snowberry.onrender.com/api/users/cart", {
                 headers: { Authorization: `Bearer ${token}` }
             });
             cart = await response.json();
@@ -23,7 +23,7 @@ async function loadCart() {
         if (!token) {
             // Fetch product details for each item
             const productPromises = cart.map(async item => {
-                const response = await fetch(`https://snowberry.vercel.app/api/products/${item.productId}`);
+                const response = await fetch(`https://snowberry.onrender.com/api/products/${item.productId}`);
 
                 const product = await response.json();
                 return { ...item, name: product.name, price: product.price, image: product.image };
@@ -83,7 +83,7 @@ async function updateCartQuantity(productId, newQuantity) {
     const token = localStorage.getItem("authToken");
     if (token) {
         try {
-            await fetch(`https://snowberry.vercel.app/api/users/cart/${productId}`, {
+            await fetch(`https://snowberry.onrender.com/api/users/cart/${productId}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -108,7 +108,7 @@ async function removeFromCart(productId) {
     const token = localStorage.getItem("authToken");
     if (token) {
         try {
-            await fetch(`https://snowberry.vercel.app/api/users/cart/${productId}`, {
+            await fetch(`https://snowberry.onrender.com/api/users/cart/${productId}`, {
                 method: "DELETE",
                 headers: { Authorization: `Bearer ${token}` }
             });

@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sendOtpBtn.textContent = "Sending...";
     
         try {
-            const response = await fetch("https://snowberry.vercel.app/api/users/send-otp-email", {
+            const response = await fetch("https://snowberry.onrender.com/api/users/send-otp-email", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email })
@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     
         try {
-            const response = await fetch("https://snowberry.vercel.app/api/users/verify-otp", {
+            const response = await fetch("https://snowberry.onrender.com/api/users/verify-otp", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, otp })
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     
         try {
-            const response = await fetch("https://snowberry.vercel.app/api/users/register", {
+            const response = await fetch("https://snowberry.onrender.com/api/users/register", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, phone, password, otp })

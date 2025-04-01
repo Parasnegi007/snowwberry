@@ -9,7 +9,7 @@ async function fetchCartItems() {
 
         if (token) {
             // Logged-in user: Fetch cart from backend API
-            const response = await fetch("https://snowberry.vercel.app/api/users/cart", {
+            const response = await fetch("https://snowberry.onrender.com/api/users/cart", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -28,7 +28,7 @@ async function fetchCartItems() {
 
             // ✅ Fetch product details for guest users
             if (guestCart.length > 0) {
-                const response = await fetch("https://snowberry.vercel.app/api/products");
+                const response = await fetch("https://snowberry.onrender.com/api/products");
                 const products = await response.json();
 
                 // Map product details to cart
@@ -94,7 +94,7 @@ async function fetchUserDetails() {
         const token = localStorage.getItem("authToken");
         if (!token) return; // Skip for guest users
 
-        const response = await fetch("https://snowberry.vercel.app/api/users/profile", {
+        const response = await fetch("https://snowberry.onrender.com/api/users/profile", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -157,7 +157,7 @@ async function saveAddress() {
 
     if (token) {
         // ✅ Logged-in User - Send Address Only
-        endpoint = "https://snowberry.vercel.app/api/users/addAddress";
+        endpoint = "https://snowberry.onrender.com/api/users/addAddress";
     } else {
         // ✅ Guest User - Send Name, Email, and Phone Too
         const name = document.getElementById("name")?.value.trim();
@@ -170,7 +170,7 @@ async function saveAddress() {
         }
 
         addressData = { name, email, phone, ...addressData };
-        endpoint = "https://snowberry.vercel.app/api/users/guest/addAddress";
+        endpoint = "https://snowberry.onrender.com/api/users/guest/addAddress";
     }
 
     console.log("Sending address data:", addressData);
@@ -211,14 +211,14 @@ async function fetchSavedAddresses() {
     let endpoint = "";
 
     if (token) {
-        endpoint = "https://snowberry.vercel.app/api/users/getAddresses";
+        endpoint = "https://snowberry.onrender.com/api/users/getAddresses";
     } else {
         const guestEmail = document.getElementById("email")?.value.trim();
         if (!guestEmail) {
             console.log("Guest email not entered yet.");
             return;
         }
-        endpoint = `https://snowberry.vercel.app/api/users/guest/getAddresses/${guestEmail}`;
+        endpoint = `https://snowberry.onrender.com/api/users/guest/getAddresses/${guestEmail}`;
     }
 
     try {
@@ -365,14 +365,14 @@ document.getElementById("proceedToPayment").addEventListener("click", async func
             let endpoint = "";
 
             if (token) {
-                endpoint = "https://snowberry.vercel.app/api/users/getAddresses";
+                endpoint = "https://snowberry.onrender.com/api/users/getAddresses";
             } else {
                 const guestEmail = document.getElementById("email")?.value.trim();
                 if (!guestEmail) {
                     alert("Please enter your email to retrieve saved addresses.");
                     return;
                 }
-                endpoint = `https://snowberry.vercel.app/api/users/guest/getAddresses/${guestEmail}`;
+                endpoint = `https://snowberry.onrender.com/api/users/guest/getAddresses/${guestEmail}`;
             }
 
             const response = await fetch(endpoint, {
@@ -464,7 +464,7 @@ document.getElementById("proceedToPayment").addEventListener("click", async func
     let cartItems = [];
     if (token) {
         try {
-            const response = await fetch("https://snowberry.vercel.app/api/users/cart", {
+            const response = await fetch("https://snowberry.onrender.com/api/users/cart", {
                 method: "GET",
                 headers: {
                     "Content-Type": "application/json",
@@ -523,7 +523,7 @@ console.log("Order Data:", orderData);
 
 // ✅ Step 7: Send Order Data to Backend
 try {
-    const response = await fetch("https://snowberry.vercel.app/api/orders/create-order", {
+    const response = await fetch("https://snowberry.onrender.com/api/orders/create-order", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

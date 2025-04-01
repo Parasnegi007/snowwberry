@@ -5,7 +5,7 @@ function updateCartCount() {
     const token = localStorage.getItem("authToken");
     
     if (token) {
-        fetch("https://snowberry.vercel.app/api/users/cart", {
+        fetch("https://snowberry.onrender.com/api/users/cart", {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` }
         })

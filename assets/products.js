@@ -1,5 +1,5 @@
-const WISHLIST_API = "https://snowberry.vercel.app/api/users/wishlist"; 
-const CART_API = "https://snowberry.vercel.app/api/users/cart"; 
+const WISHLIST_API = "https://snowberry.onrender.com/api/users/wishlist"; 
+const CART_API = "https://snowberry.onrender.com/api/users/cart"; 
 
 document.addEventListener("DOMContentLoaded", async () => {
     const categoryName = document.body.getAttribute("data-category"); // Get category from HTML
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         // Fetch categories to get the correct ID
-        const categoryResponse = await fetch("https://snowberry.vercel.app/api/categories");
+        const categoryResponse = await fetch("https://snowberry.onrender.com/api/categories");
         if (!categoryResponse.ok) throw new Error("Failed to fetch categories");
 
         const categories = await categoryResponse.json();
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         console.log("✅ Found Category ID:", category._id);
 
         // Fetch products based on the category ID
-        const productResponse = await fetch(`https://snowberry.vercel.app/api/products/category/${category._id}`);
+        const productResponse = await fetch(`https://snowberry.onrender.com/api/products/category/${category._id}`);
         if (!productResponse.ok) throw new Error("Failed to fetch products");
 
         const products = await productResponse.json();
@@ -118,7 +118,7 @@ async function addToCart(productId) {
 // ❤️ Function to add item to Wishlist (Guest & Logged-in Users)
 async function addToWishlist(productId) {
     const token = localStorage.getItem("authToken");
-    const WISHLIST_API = "https://snowberry.vercel.app/api/users/wishlist"; // ✅ Ensure API is defined
+    const WISHLIST_API = "https://snowberry.onrender.com/api/users/wishlist"; // ✅ Ensure API is defined
 
     if (!token) {
         // Guest user - store in localStorage

@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const token = localStorage.getItem("authToken");
     if (token) {
         try {
-            const response = await fetch("https://snowberry.vercel.app/api/users/me", {
+            const response = await fetch("https://snowberry.onrender.com/api/users/me", {
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` },
             });
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         const messageBox = document.getElementById("formMessage");
 
         try {
-            const response = await fetch("https://snowberry.vercel.app/api/users/contact", {
+            const response = await fetch("https://snowberry.onrender.com/api/users/contact", {
                 method: "POST",
                 headers: { 
                     "Content-Type": "application/json",
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             const messageBox = document.getElementById("queryMessage");
         
             try {
-                const response = await fetch("https://snowberry.vercel.app/api/users/send-query", {
+                const response = await fetch("https://snowberry.onrender.com/api/users/send-query", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

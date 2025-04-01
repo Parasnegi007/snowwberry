@@ -56,7 +56,7 @@ async function checkLoginStatus() {
             return;
         }
 
-        const response = await fetch("https://snowberry.vercel.app/api/users/me", {
+        const response = await fetch("https://snowberry.onrender.com/api/users/me", {
             headers: { "Authorization": `Bearer ${token}` }
         });
 
@@ -80,7 +80,7 @@ async function checkLoginStatus() {
 }
 document.addEventListener("DOMContentLoaded", async function () {
     try {
-        const response = await fetch("https://snowberry.vercel.app/api/products/featured");
+        const response = await fetch("https://snowberry.onrender.com/api/products/featured");
         const featuredProducts = await response.json();
 
         if (featuredProducts.length > 0) {
