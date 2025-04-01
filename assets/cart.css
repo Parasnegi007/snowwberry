@@ -1,0 +1,521 @@
+/* General Styles */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap');
+
+body {
+    background: #ffffff; /* Soft, creamy pastel yellow */
+    color: #3D2B1F; /* Rich deep brown for readability */
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+}
+a {
+    display: inline-block; /* Makes the <a> tag behave like a block */
+    width:auto; /* Ensures it takes full width of the button */
+    text-decoration: none; /* Removes any default underline */
+}
+
+h1,h2, h3, h4, h5, h6 {
+    color: #444444; /* Bold, rich burnt orange */
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight:normal;
+}
+
+/* Fixed Header with Frosted Glass Effect */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(245, 248, 255, 0.392); /* Frosted glass effect */
+   backdrop-filter:blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    border-bottom: 2px solid #ddd;
+    height: 150px;
+}
+
+/* Main Background Styling */
+.intro-section {
+    position: relative;
+    margin-top: 0px;
+    padding-top: 150px;
+    padding-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(to top, #069e85, #46b04b);
+
+
+
+}
+
+/* Falling Fruits Styling */
+.fruit-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.fruit {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: fallFruits linear infinite;
+}
+
+/* Keyframes for Falling Animation */
+@keyframes fallFruits {
+    0% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* JavaScript will generate multiple falling fruits dynamically */
+
+
+.intro-section h8 {
+    position: relative;
+    font-size: 13px;
+    color: #333; /* Minimal heading color */
+    margin-bottom: 10px;
+   
+}
+/* Navigation Links in a Single Division */
+.nav-links {
+    flex: 1;
+    display: flex;
+    transform: translateX(40px);
+    justify-content:center;
+}
+
+.nav-links nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-top: 100px;
+    padding: 0;
+}
+
+.nav-links nav ul li {
+    display: inline;
+}
+
+.nav-links nav ul li a {
+    color:white;
+    text-decoration: none;
+    font-weight: lighter;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links nav ul li a:hover {
+    color: #C0392B;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    padding: 0;
+    gap: 500px;
+    position: relative;
+}
+nav ul li {
+    position: relative; /* Ensures the underline stays within each link */
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 5px;
+    transition: background 0.3s, text-decoration 0.3s;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; /* Moves the underline slightly below the text */
+    left: 50%; /* Starts from center */
+    width: 0;
+    height: 2px;
+    background-color: #C0392B;
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%); /* Keeps it centered */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Centered Logo */
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the logo */
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Cart & Dashboard on Right */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Icons */
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+/* Box Styling Around Cart & Dashboard */
+.cart-container, 
+.wishlist-container, 
+.dashboard-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%; /* Soft-rounded corners for a premium look */
+    background: linear-gradient(to bottom, #f5f5f5, #d9d9d9); /* Light gradient for depth */
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #444; /* Stronger border for definition */
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.5), 
+                inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+                0 3px 8px rgba(0, 0, 0, 0.15); /* Subtle depth effect */
+    cursor: pointer;
+}
+
+.cart-container:hover, 
+.wishlist-container:hover, 
+.dashboard-container:hover {
+    background: linear-gradient(to bottom, #e3e3e3, #c4c4c4); /* Slightly darker hover effect */
+    transform: translateY(-2px);
+    border-color: #222; /* Darker border on hover */
+}
+.cart-container a img,
+.wishlist-container a img{
+    position: relative;
+    top: 4px;
+    left: 0px;
+    width: 35px;
+    height: 35px;
+}
+
+/* Cart container with badge */
+.cart-container {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: light;
+    padding: 3px 6px;
+    border-radius: 0% ;
+        min-width: 18px;
+    text-align: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+/* Prevent content overflow */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Cart Section */
+.cart {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.cart h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Cart Items */
+.cart-item {
+    display: flex;
+    align-items: center;
+    background: #f8f9fa; /* Soft gray */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cart-item:hover {
+    transform: translateY(-3px);
+    background: #eef1f3; /* Slightly darker shade */
+}
+
+/* Item Image */
+.cart-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-right: 15px;
+}
+
+/* Item Details */
+.item-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Item Title */
+.item-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* Item Price */
+.item-price {
+    font-size: 15px;
+    font-weight: 600;
+    color: #28a745; /* Green for positive emphasis */
+}
+
+/* Quantity Controls - Neat & Compact */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Common Button Styles */
+.quantity-control button {
+    background: #F8F9FA; /* Light grey for a soft, neutral look */
+    color: #333; /* Dark grey text */
+    border: 1.5px solid #ddd; /* Default light border */
+    padding: 4px 10px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: border-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Plus Button - Green Outline on Hover */
+.cart-btn-plus {
+    border-color: #28a745; /* Green border */
+}
+.cart-btn-plus:hover {
+    border-color: #28a745;
+    color: #28a745;
+    background: #fff;
+}
+
+/* Minus Button - Red Outline on Hover */
+.cart-btn-minus {
+    border-color: #dc3545; /* Red border */
+}
+.cart-btn-minus:hover {
+    border-color: #dc3545;
+    color: #dc3545;
+    background: #fff;
+}
+/* Quantity Display - Compact & Aligned */
+.cart-quantity {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 4px 12px;
+    background: #EEE;
+    border-radius: 4px;
+    text-align: center;
+    min-width: 40px;
+}
+
+/* Remove Button - Clean & Modern */
+.cart-item .cart-btn-remove {
+    background: #F8F9FA;
+    color: #D9534F;
+    border: 1.5px solid #ddd;
+    padding: 5px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+}
+
+.cart-item .cart-btn-remove:hover {
+    background: #D9534F;
+    color: white;
+    border-color: #D9534F;
+}
+
+
+/*back to shop */
+#checkout-btn {
+    display: block;
+    text-decoration:none;
+    width: 200px;
+    justify-self:center;
+    text-align: center;
+    padding: 10px 15px;
+    background: #00796b; 
+    color: white;
+    border: 2px solid transparent;
+    font-weight: normal;
+    border-radius: 5px;
+    margin-top: 180px;
+}
+#checkout-btn:hover {
+    background: white;
+    color:#00796b;
+    border-color: #00796b;
+    box-shadow: 0px 5px 15px rgba(10, 48, 6, 0.4);
+    transform: translateY(-2px);
+}
+/* Cart Summary */
+.cart-summary {
+    color: #333; /* Dark gray for readability */
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f8f8; /* Soft neutral background */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-weight: 500;
+    font-size: 18px;
+    border-left: 5px solid #ff6600; /* Accent border for a modern touch */
+}
+
+/* Optional: Add hover effect for a more dynamic look */
+.cart-summary:hover {
+    background: #fffaf0; /* Slight warm tint */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.back-to-shop {
+    background: #ff9900;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 6px;
+    font-weight:normal;
+    transition: all 0.3s ease-in-out;
+    margin: 30px auto;
+    width: fit-content;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+/* Subtle but clean hover effect */
+
+    .back-to-shop:hover{
+    background: white;
+    color: #ff9900;
+    border-color: #ff9900;
+    box-shadow: 0px 5px 15px rgba(255, 153, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+
+/* Ensure body and html take full height */
+html, body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+   
+}
+
+/* Make the main content section expand to push footer down */
+.container {
+    flex: 1;
+}
+
+/* Social Media Section */
+.social-media {
+    padding: 20px;
+    background: #222;
+    color: white;
+    text-align: center;
+    font-size: 27px;
+    
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-icon {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #ffcc00;
+}
+
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 2px;
+    margin-top: 1px;
+    text-align: center;
+}
+

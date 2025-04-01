@@ -1,0 +1,371 @@
+/* General Styles */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap');
+
+body {
+    background: #ffffff; /* Soft, creamy pastel yellow */
+    color: #3D2B1F; /* Rich deep brown for readability */
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+}
+a {
+    display: inline-block; /* Makes the <a> tag behave like a block */
+    width:auto; /* Ensures it takes full width of the button */
+    text-decoration: none; /* Removes any default underline */
+}
+
+h1,h2, h3, h4, h5, h6 {
+    color: #444444; /* Bold, rich burnt orange */
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+}
+
+/* Fixed Header with Frosted Glass Effect */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(245, 248, 255, 0.17); /* Frosted glass effect */
+   backdrop-filter:blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+    height: 150px;
+}
+/* Centered Logo */
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the logo */
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Main Background Styling */
+.intro-section {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    margin-top: 0px;
+    padding-top: 150px;
+    padding-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(to top, #069e85, #46b04b);
+}
+
+/* Falling Fruits Styling */
+.fruit-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.fruit {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: fallFruits linear infinite;
+}
+
+/* Keyframes for Falling Animation */
+@keyframes fallFruits {
+    0% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* JavaScript will generate multiple falling fruits dynamically */
+
+
+.intro-section h8 {
+    position: relative;
+    font-size: 13px;
+    color: #333; /* Minimal heading color */
+    margin-bottom: 10px;
+   
+}/* Ensure body and html take full height */
+html, body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make the main content section expand to push footer down */
+.container {
+    flex: 1;
+}
+
+.checkout-container {
+    display: flex;
+    justify-content: space-between; /* Ensures left & right sections */
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    max-width: 95vw;
+    margin: auto;
+}
+
+/* Left Section: Billing & Shipping Form */
+.checkout-form {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   width: 55vw;
+}
+#saveAddress{
+    display: block;
+    text-decoration:none;
+    cursor: pointer;
+    width: 200px;
+    justify-self:center;
+    text-align: center;
+    padding: 10px 15px;
+    background: #00796b; 
+    color: white;
+    border: 2px solid transparent;
+    font-weight: normal;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+#saveAddress:hover{
+    background: white;
+    color:#00796b;
+    border-color: #00796b;
+    box-shadow: 0px 5px 15px rgba(10, 48, 6, 0.4);
+    transform: translateY(-2px)
+}
+
+/* Right Section: Order Summary */
+.order-summary {
+    width: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for Forms */
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+    width: 80%;
+    padding: 10px;
+    margin: 15px -15px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}/* Saved Addresses Section - Ensure it is clearly visible */
+#saved-addresses{
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 100%;
+    height: auto;
+    display: block; /* Ensure it is not hidden */
+}
+
+/* Individual Address Option */
+.saved-address {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: white;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 10px;
+}
+
+/* Make Selected Address Stand Out */
+.saved-address input {
+    display: none;
+}
+
+.saved-address label {
+    cursor: pointer;
+    flex-grow: 1;
+}
+
+/* Highlight when selected */
+.saved-address input:checked + label {
+    border-left: 2px solid #007bff;
+    color: #007bff;
+    font-weight: lighter;
+    padding-left: 4px;
+}
+
+/* Hover Effect */
+.saved-address:hover {
+    border-color: #007bff;
+    background: #eef5ff;
+}
+
+
+/* Order Summary Styling */
+.order-summary h2 {
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 10px;
+}
+
+#order-items {
+    margin-top: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+.order-item, .order-total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-total-row {
+    font-size: 1.1em;
+    font-weight: bold;
+    border-top: 2px solid #333;
+    margin-top: 10px;
+    padding-top: 10px;
+}
+
+
+/* Button Styling */
+#proceedToPayment {
+    display: block;
+    text-decoration:none;
+    cursor: pointer;
+    width: 200px;
+    justify-self:center;
+    text-align: center;
+    padding: 10px 15px;
+    background: #00796b; 
+    color: white;
+    border: 2px solid transparent;
+    font-weight: normal;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+#proceedToPayment:hover {
+    background: white;
+    color:#00796b;
+    border-color: #00796b;
+    box-shadow: 0px 5px 15px rgba(10, 48, 6, 0.4);
+    transform: translateY(-2px)
+}
+#cancelOrder {
+    background: #ff9900;
+    justify-self: center;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight:normal;
+    transition: all 0.3s ease-in-out;
+    margin: 20px auto; /* Centers the button */
+    display: block; /* Ensures it stays in its own row */
+    width: 200px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+}
+#cancelOrder:hover {
+    background: white;
+    color: #ff9900;
+    border-color: #ff9900;
+    box-shadow: 0px 5px 15px rgba(255, 153, 0, 0.4);
+    transform: translateY(-2px);
+}
+/* Align Billing & Shipping Details Text to Left */
+.checkout-form label,
+.checkout-form input,
+.checkout-form select,
+.checkout-form textarea {
+    text-align: left;
+    display: block;
+    width: 100%;
+}
+
+/* Modern Payment Options Styling */
+
+/* Payment Options Container */
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Ensures space between each option */
+    width: auto;
+    margin: auto;
+}
+
+/* Individual Payment Option */
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 1px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background: #f9f9f9;
+    width: auto;
+    font-size: 16px;
+    font-weight: 500;
+    gap: 12px; /* Space between logo and text */
+    margin-bottom: 20px; /* Adds separation between payment options */
+}
+/* Hover & Selected State */
+.payment-option:hover,
+.payment-option.selected {
+    border-color: #007bff;
+    background: #eef5ff;
+}
+
+/* Hide Default Radio Button */
+.payment-option input {
+    display: none;
+}
+
+/* Payment Logo Styling */
+.payment-logo {
+    width: 30px;
+    height: auto;
+}

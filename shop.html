@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Fruit Categories</title>
+    <link rel="stylesheet" href="assets/shop.css">
+</head>
+<body>
+
+    <!-- Header Section (Same as Other Pages) -->
+    <header>
+        <div class="dashboard-container">
+            <a href="dashboard.html">
+                <img src="assets/images/6.png" alt="dashboard" class="nav-logo">
+            </a>
+        </div>
+        <div class="logo">
+            <h1>🍏 Fresh Fruits</h1>
+        </div>
+        <div class="nav-links">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-right">
+            <div class="cart-container">
+                <a href="cart.html">
+                    <img src="assets/images/4.png" alt="cart" class="nav-logo">
+                </a>
+                <span id="cart-count" class="cart-count"></span>
+            </div>
+            <div class="wishlist-container">
+                <a href="wishlist.html">
+                    <img src="assets/images/7.png" alt="wishlist" class="nav-logo">
+                </a>
+            </div>
+        </div>
+    </header>
+     <!--intro -->
+     <section class="intro-section">
+        <div class="container">
+            <h8>"Cultivating Brilliance in Khadrala’s Verdant Heights"</h8>
+        </div>
+        <div class="fruit-container" id="fruitContainer"></div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fruitContainer = document.getElementById("fruitContainer");
+            const fruits = ['🍏', '🍒', '🫐','🍎', '🍓'];
+            
+            function createFruit() {
+                const fruit = document.createElement("div");
+                fruit.classList.add("fruit");
+                fruit.innerHTML = fruits[Math.floor(Math.random() * fruits.length)];
+                fruit.style.left = Math.random() * 100 + "vw";
+                fruit.style.animationDuration = Math.random() * 3 + 5 + "s";
+                fruit.style.fontSize = Math.random() * 15 + 15 + "px"; // Varying fruit size
+                fruitContainer.appendChild(fruit);
+                
+                setTimeout(() => {
+                    fruit.remove();
+                }, 8000);
+            }
+    
+            setInterval(createFruit, 500);
+        });
+    </script>
+    </section>
+
+   <!-- Shop Category Section -->
+   <section class="shop-categories">
+    <div class="shop-container">
+        <h2>Shop by Category</h2>
+        <div id="categoryContainer" class="category-grid">
+
+        </div>
+        
+    </div>
+</section>
+
+        <!-- Social Media Links -->
+        <section class="social-media">
+            <h2>Follow Us</h2>
+            <div class="social-links">
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Fresh Apples Store | All Rights Reserved</p>
+    </footer>
+
+    <script src="assets/shop.js"></script>
+    <script src="assets/header.js"></script>
+<script>document.addEventListener("DOMContentLoaded", updateCartCount);</script>
+</body>
+</html>

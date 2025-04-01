@@ -1,0 +1,395 @@
+/* General Styles */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap');
+
+body {
+    background: #ffffff; /* Soft, creamy pastel yellow */
+    color: #3D2B1F; /* Rich deep brown for readability */
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+}
+a {
+    display: inline-block; /* Makes the <a> tag behave like a block */
+    width:auto; /* Ensures it takes full width of the button */
+    text-decoration: none; /* Removes any default underline */
+}
+
+h1,h2, h3, h4, h5, h6 {
+    color: #444444; /* Bold, rich burnt orange */
+    letter-spacing: 1px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+}
+
+/* Fixed Header with Frosted Glass Effect */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(245, 248, 255, 0.17); /* Frosted glass effect */
+   backdrop-filter:blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+    height: 150px;
+}
+
+/* Main Background Styling */
+.intro-section {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    margin-top: 0px;
+    padding-top: 150px;
+    padding-bottom: 5px;
+    font-family: 'Poppins', sans-serif;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(to top, #069e85, #46b04b);
+}
+
+/* Falling Fruits Styling */
+.fruit-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.fruit {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: fallFruits linear infinite;
+}
+
+/* Keyframes for Falling Animation */
+@keyframes fallFruits {
+    0% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* JavaScript will generate multiple falling fruits dynamically */
+
+
+.intro-section h8 {
+    position: relative;
+    font-size: 13px;
+    color: #333; /* Minimal heading color */
+    margin-bottom: 10px;
+   
+}
+/* Navigation Links in a Single Division */
+.nav-links {
+    flex: 1;
+    display: flex;
+    transform: translateX(40px);
+    justify-content:center;
+}
+
+.nav-links nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-top: 100px;
+    padding: 0;
+}
+
+.nav-links nav ul li {
+    display: inline;
+}
+
+.nav-links nav ul li a {
+    color: #FFFFFF;    ;
+    text-decoration: none;
+    font-weight: lighter;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links nav ul li a:hover {
+    color: #C0392B;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+    padding: 0;
+    gap: 500px;
+    position: relative;
+}
+nav ul li {
+    position: relative; /* Ensures the underline stays within each link */
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 5px;
+    transition: background 0.3s, text-decoration 0.3s;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; /* Moves the underline slightly below the text */
+    left: 50%; /* Starts from center */
+    width: 0;
+    height: 2px;
+    background-color: #C0392B;
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%); /* Keeps it centered */
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Centered Logo */
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Center the logo */
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* Cart & Dashboard on Right */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Icons */
+.nav-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+/* Box Styling Around Cart & Dashboard */
+.cart-container, 
+.wishlist-container, 
+.dashboard-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%; /* Soft-rounded corners for a premium look */
+    background: linear-gradient(to bottom, #f5f5f5, #d9d9d9); /* Light gradient for depth */
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #444; /* Stronger border for definition */
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.5), 
+                inset -2px -2px 5px rgba(0, 0, 0, 0.1),
+                0 3px 8px rgba(0, 0, 0, 0.15); /* Subtle depth effect */
+    cursor: pointer;
+}
+
+.cart-container:hover, 
+.wishlist-container:hover, 
+.dashboard-container:hover {
+    background: linear-gradient(to bottom, #e3e3e3, #c4c4c4); /* Slightly darker hover effect */
+    transform: translateY(-2px);
+    border-color: #222; /* Darker border on hover */
+}
+.cart-container a img,
+.wishlist-container a img{
+    position: relative;
+    top: 4px;
+    left: 0px;
+    width: 35px;
+    height: 35px;
+}
+
+/* Cart container with badge */
+.cart-container {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: 1px;
+    right: 10px;
+    background: transparent;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: light;
+    padding: 3px 6px;
+    border-radius: 0% ;
+        min-width: 18px;
+    text-align: center;
+    pointer-events: none;
+    z-index: 3;
+}
+
+ /* Modern Shop Categories Section */
+ .shop-categories {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f8f8f8; /* Light grey background */
+    color: #333;
+}
+
+/* Main Container */
+.shop-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 50px;
+    background: #ffffff; /* White background for clean look */
+    border-radius: 0px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 30px;
+}
+
+/* Individual Category Card */
+.category-item {
+    background: linear-gradient(rgb(230, 219, 255),white);
+    padding: 25px;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid #ddd;
+}
+
+/* Category Image */
+.category-item img {
+    width: 100%;
+    max-width: auto;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Category Title */
+.category-item h3 {
+    color: #333;
+    font-size: 22px;
+    margin: 15px 0 5px;
+}
+
+/* Category Description */
+.category-item p {
+    color: #666;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+/* Hover Effects */
+.category-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.category-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .category-item {
+        height: 360px;
+    }
+    .category-item img {
+        height: 160px;
+    }
+}
+/*Ensure body and html take full height */
+html, body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make the main content section expand to push footer down */
+.container {
+    flex: 1;
+}
+
+/* Social Media Section */
+.social-media {
+    padding: 20px;
+    background: #222;
+    color: white;
+    text-align: center;
+    font-size: 27px;
+    
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.social-icon {
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: #ffcc00;
+}
+
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    padding: 2px;
+    margin-top: 1px;
+    text-align: center;
+}
+

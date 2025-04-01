@@ -1,0 +1,15 @@
+# Ignore node_modules folder
+node_modules/
+
+# Ignore .env files that store sensitive data
+.env
+
+# Ignore logs
+*.log
+
+# Ignore build files if you're using any build process (e.g., Webpack, Babel)
+dist/
+build/
+
+# Ignore operating system files (e.g., macOS .DS_Store)
+.DS_Store

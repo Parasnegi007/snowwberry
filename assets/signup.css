@@ -1,0 +1,193 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap');
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Section (Same as Home Page) */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 40px;
+    background: rgba(245, 248, 255, 0.17);
+    backdrop-filter: blur(8px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+    height: 150px;
+}
+
+.logo {
+    text-align: center;
+    font-size: 26px;
+    font-weight: bold;
+    color: #3D2B1F;
+}
+
+/* Intro Section (Same as Home Page) */
+.intro-section {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    margin-top: 0px;
+    padding-top: 150px;
+    padding-bottom: 5px;
+    text-align: center;
+    background: linear-gradient(to top, #069e85, #46b04b);
+}
+
+.intro-section h8 {
+    font-size: 13px;
+    color: #fff;
+}
+
+/* Falling Fruits Styling */
+.fruit-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.fruit {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: fallFruits linear infinite;
+}
+
+/* Falling Fruits Animation */
+@keyframes fallFruits {
+    0% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+/* Signup Form Section */
+.signup-container {
+    max-width: 420px;
+    margin: 100px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #333;
+}
+
+/* Title */
+.signup-container h2 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Form Styling */
+#signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Styling */
+label {
+    text-align: left;
+    font-size: 15px;
+    margin-top: 12px;
+    color: #444;
+    font-weight: 500;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    transition: all 0.3s;
+    color: #222;
+}
+
+/* Focus Effect */
+input:focus {
+    border-color: #00796b;
+    outline: none;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
+}
+
+/* Show Password Checkbox */
+#show-password {
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* OTP Section */
+#otp-section {
+    margin-top: 12px;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 14px;
+    background: #00796b;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Button Hover */
+button:hover {
+    background: #004d40;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Disabled Signup Button */
+#signup-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Login Link */
+.signup-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-container a {
+    color: #00796b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-container a:hover {
+    text-decoration: underline;
+}

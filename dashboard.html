@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Fresh Apples Store</title>
+     <!-- Font Awesome CDN for icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/dashboard.css">
+</head>
+<body>
+
+         <!-- Header Section -->
+         <header>
+            <!-- Centered Logo -->
+            <div class="logo">
+                <h1>🍏Fresh Apples</h1>
+            </div>
+            <div class=nav-links>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="shop.html">Shop</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        
+            <!-- Cart & wishlist on the Right -->
+            <div class="header-right">
+                <div class="cart-container">
+                    <a href="cart.html">
+                        <img src="assets/images/4.png" alt="cart" class="nav-logo">
+                    </a>
+                    <span id="cart-count" class="cart-count"></span>
+                </div>
+                <div class="wishlist-container">
+                    <a href="wishlist.html">
+                        <img src="assets/images/7.png" alt="wishlist" class="nav-logo">
+                    </a>
+                </div>
+                
+                
+            </div>
+        </header>
+        <!--intro -->
+        <section class="intro-section">
+            <div class="container">
+                <h8>"Cultivating Brilliance in Khadrala’s Verdant Heights"</h8>
+            </div>
+            <div class="fruit-container" id="fruitContainer"></div>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const fruitContainer = document.getElementById("fruitContainer");
+                const fruits = ['🍏', '🍒', '🫐','🍎', '🍓'];
+                
+                function createFruit() {
+                    const fruit = document.createElement("div");
+                    fruit.classList.add("fruit");
+                    fruit.innerHTML = fruits[Math.floor(Math.random() * fruits.length)];
+                    fruit.style.left = Math.random() * 100 + "vw";
+                    fruit.style.animationDuration = Math.random() * 3 + 5 + "s";
+                    fruit.style.fontSize = Math.random() * 15 + 15 + "px"; // Varying fruit size
+                    fruitContainer.appendChild(fruit);
+                    
+                    setTimeout(() => {
+                        fruit.remove();
+                    }, 8000);
+                }
+        
+                setInterval(createFruit, 500);
+            });
+        </script>
+        </section>
+
+   <!-- Dashboard Section -->
+<section class="dashboard-container">
+
+    <!-- Profile Details -->
+    <div class="profile-section">
+        <h3>My Profile</h3>
+        <p><strong>Name:</strong> <span id="display-name"></span></p>
+        <p><strong>Email:</strong> <span id="display-email"></span> </p>
+        <p><strong>Phone:</strong> <span id="display-phone"></span> </p>
+        <button id="edit-profile">Edit Profile</button>
+    </div>
+
+    <!-- Edit Profile Form (Initially Hidden) -->
+    <div id="edit-profile-section" style="display: none;">
+        <h3>Edit Profile</h3>
+        <label for="edit-name">Name:</label>
+        <input type="text" id="edit-name">
+
+        <label for="edit-email">Email:</label>
+        <input type="email" id="edit-email">
+        <span id="email-error" style="color: red; font-size: 12px; display: none;"></span>
+
+        <label for="edit-phone">Phone:</label>
+        <input type="tel" id="edit-phone">
+        <span id="phone-error" style="color: red; font-size: 12px; display: none;"></span>
+        <button id="send-otp" style="display: none;">Send OTP</button>
+
+        <div id="email-otp-section" style="display: none;">
+            <input type="text" id="email-otp" placeholder="Enter OTP">
+            <p id="email-otp-error" style="color: red; display: none;">Invalid OTP</p>
+        </div>
+
+        <div id="phone-otp-section" style="display: none;">
+            <input type="text" id="phone-otp" placeholder="Enter OTP">
+            <button id="verify-otp">Verify OTP</button>
+            <p id="phone-otp-error" style="color: red; display: none;">Invalid OTP</p>
+        </div>
+
+        <button id="save-profile" style="display: none;">Save Changes</button>
+    </div>
+
+  <!-- My Addresses Section -->
+<div class="addresses-section">
+    <h3>My Addresses</h3>
+    <ul id="address-list">
+        <!-- Address items will be dynamically inserted here -->
+    </ul>
+</div>
+    <!-- Orders Section -->
+<div class="orders-section">
+    <h3>My Orders</h3>
+    
+    <!-- Order List -->
+    <ul id="order-list">
+        <!-- Orders will be dynamically inserted here -->
+    </ul>
+
+    <!-- Load Previous Orders Button -->
+    <button id="load-previous-orders">Load Previous Orders</button>
+
+    <!-- No Orders Message (Initially Hidden) -->
+    <p id="no-orders-message" style="display: none;">You haven't placed any orders yet.</p>
+</div>
+
+<!-- Order Details Section (Initially Hidden) -->
+<div id="order-details-section" style="display: none;">
+    <h3>Order Details</h3>
+    <div id="order-details-content">
+        <!-- Order details will be dynamically inserted here -->
+    </div>
+    <button id="close-order-details">Close</button>
+</div>
+<script src="assets/dashboard.js"></script>
+<script src="assets/header.js"></script>
+<script>document.addEventListener("DOMContentLoaded", updateCartCount);</script>
+
+    <!-- Logout Button -->
+    <button id="logout">Logout</button>
+</section>
+ <!-- Social Media Links -->
+ <section class="social-media">
+    <h7>Follow Us</h7>
+    <div class="social-links">
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+    </div>
+</section>
+ <!-- Footer Section -->
+ <footer>
+    <p>&copy; 2025 Fresh Apples Store | All Rights Reserved</p>
+</footer>
+

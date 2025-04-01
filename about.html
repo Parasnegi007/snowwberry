@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Fresh Apples Store</title>
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/about.css">
+</head>
+<body>
+
+      <!-- Header Section -->
+      <header>
+        <!--dashboard on left-->
+        <div class="dashboard-container">
+            <a href="dashboard.html">
+                <img src="assets/images/6.png" alt="dashboard" class="nav-logo">
+            </a>
+        </div>
+        <!-- Centered Logo -->
+        <div class="logo">
+            <h1>🍏Fresh Apples</h1>
+        </div>
+        <div class=nav-links>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    
+        <!-- Cart & wishlist on the Right -->
+        <div class="header-right">
+            <div class="cart-container">
+                <a href="cart.html">
+                    <img src="assets/images/4.png" alt="cart" class="nav-logo">
+                </a>
+                <span id="cart-count" class="cart-count"></span>
+            </div>
+            <div class="wishlist-container">
+                <a href="wishlist.html">
+                    <img src="assets/images/7.png" alt="wishlist" class="nav-logo">
+                </a>
+            </div>
+            
+            
+        </div>
+    </header>
+    <!--intro -->
+    <section class="intro-section">
+        <div class="container">
+            <h8>"Cultivating Brilliance in Khadrala’s Verdant Heights"</h8>
+        </div>
+        <div class="fruit-container" id="fruitContainer"></div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fruitContainer = document.getElementById("fruitContainer");
+            const fruits = ['🍏', '🍒', '🫐','🍎', '🍓'];
+            
+            function createFruit() {
+                const fruit = document.createElement("div");
+                fruit.classList.add("fruit");
+                fruit.innerHTML = fruits[Math.floor(Math.random() * fruits.length)];
+                fruit.style.left = Math.random() * 100 + "vw";
+                fruit.style.animationDuration = Math.random() * 3 + 5 + "s";
+                fruit.style.fontSize = Math.random() * 15 + 15 + "px"; // Varying fruit size
+                fruitContainer.appendChild(fruit);
+                
+                setTimeout(() => {
+                    fruit.remove();
+                }, 8000);
+            }
+    
+            setInterval(createFruit, 500);
+        });
+    </script>
+    </section>
+
+    <!-- Main Content for About Us -->
+    <section class="about-us">
+        <div class="about-us-content">
+            <h2>Our Story</h2>
+            <p>We are a family-owned farm located in the scenic village of Khadrala, nestled in the hills of Shimla, Himachal Pradesh, at an altitude of 10,000 feet. With years of dedication to organic farming, we proudly grow and harvest the freshest apples, ensuring that only the best reaches your doorstep.</p>
+            <p>At Fresh Apples, we believe in the power of nature. Our apples are grown without any harmful chemicals, ensuring a healthy and delicious product for you and your family. Our mission is to bring you the finest apples, directly from our farm to your table.</p>
+            <h3>Why Choose Us?</h3>
+            <ul>
+                <li>100% Organic Apples</li>
+                <li>Freshly Harvested & Delivered to Your Doorstep</li>
+                <li>Support for Sustainable Farming</li>
+                <li>Family-Owned and Operated</li>
+            </ul>
+            <h3>Our Mission</h3>
+            <p>Our mission is simple: to provide our customers with fresh, healthy, and sustainably grown apples while supporting the environment and the local farming community. We are committed to maintaining the highest standards of quality in every apple we grow.</p>
+        </div>
+
+        <!-- Optional: Image Gallery -->
+        <div class="farm-gallery">
+            <h3>Our Farm in Pictures</h3>
+            <div class="gallery">
+                <img src="assets/images/a.jpg" alt="Farm Image 1" onclick="openModal(this)">
+                <img src="assets/images/b.jpg" alt="Farm Image 2" onclick="openModal(this)">
+                <img src="assets/images/c.jpg" alt="Farm Image 3" onclick="openModal(this)">
+            </div>
+        </div>
+        
+        <!-- Modal for Image Gallery -->
+        <div id="imageModal" class="modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img class="modal-content" id="modalImage">
+        </div>
+
+    <!-- JavaScript File Link -->
+    <script src="assets/about.js"></script>
+    <!-- Social Media Links -->
+    <section class="social-media">
+        <h7>Follow Us</h7>
+        <div class="social-links">
+            <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+        </div>
+    </section>
+    </section>
+    <script src="assets/header.js"></script> <!-- Ensure this is included -->
+    
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Fresh Apples Store | All Rights Reserved</p>
+    </footer>
+</body>
+</html>
