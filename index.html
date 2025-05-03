@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Fresh Apples Store</title>
+     <!-- Font Awesome CDN for icons -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="assets/home.css">
+</head>
+
+<body>
+  
+        <section class="marquee-container">
+            <div class="marquee">
+            <h8>"Cultivating Brilliance in Khadrala’s Verdant Heights"</h8>
+            <h9>Get 20% off on your first purchase! <strong>Limited time only!</strong></h9>
+        </div>
+    </section>
+        <header>
+        <!--dashboard on left-->
+        <div class="dashboard-container">
+            <a href="dashboard.html">
+                <i class="fa fa-user nav-logo" aria-hidden="true"></i>
+                <span class="icon-label" id="user-label">Login</span>
+            </a>
+        </div>
+        
+        <!-- Menu Button for Mobile -->
+        <div id="menu-bar" class="menu-bar">
+            <button id="menu-toggle" class="menu-toggle">☰</button>
+        </div>
+    
+        <!-- Side Menu Container -->
+        <div id="side-menu" class="side-menu">
+            <!-- Add the Dashboard badge here -->
+            <div class="mid-logo">
+                <h1>Fresh Apples</h1>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About Us</a></li>
+               
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="dashboard-container">
+                <a href="dashboard.html">
+                    <i class="fa fa-user nav-logo" aria-hidden="true"></i>
+                    <span class="icon-label" id="user-label">Login</span>
+                </a>
+            </div>
+        </div>
+    
+        <!-- Centered Logo -->
+        <div class="logo">
+            <h1>Fresh Apples</h1>
+        </div>
+    
+        <!-- Navigation Links (Desktop) -->
+        <div class="nav-links">
+            <nav>
+                
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                   
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+    
+        <!-- Cart & Wishlist on the Right -->
+        <div class="header-right">
+            <div class="wishlist-container">
+                <a href="wishlist.html">
+                    <i class="fa fa-heart nav-logo" aria-hidden="true"></i>
+                    <span class="icon-label">Wishlist</span>
+                </a>
+            </div>
+            <div class="cart-container">
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart nav-logo" aria-hidden="true"></i>
+                    <span class="icon-label">Cart</span>
+                </a>
+                <span id="cart-count" class="cart-count"></span>
+            </div>
+        </div>
+        
+       
+    </header>
+    
+
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-carousel">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active">
+            <img src="assets/images/IMG_0021-2.jpg" alt="Organic Apples">
+            <div class="carousel-content">
+                <h2 class="slide-in-left">We Grow & Sell Organic Apples</h2>
+                <p class="slide-in-right">Fresh, juicy, and naturally grown apples delivered to your doorstep.</p>
+            </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-slide">
+            <img src="assets/images/bg.jpg" alt="Farm Background">
+            <div class="carousel-content">
+                <h2 class="slide-in-up">Experience Nature’s Best</h2>
+                <p class="slide-in-down">Harvested with love and care, straight from our orchards.</p>
+            </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="carousel-slide">
+            <img src="assets/images/IMG_0036.jpg" alt="Fresh Apples">
+            <div class="carousel-content">
+                <h2 class="slide-in-left">Juicy and Delicious</h2>
+                <p class="slide-in-right">Perfect for snacking, baking, and making memories.</p>
+            </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="carousel-slide">
+            <img src="assets/images/IMG_0124.jpg" alt="Apple Orchard">
+            <div class="carousel-content">
+                <h2 class="slide-in-up">From Our Orchards to Your Table</h2>
+                <p class="slide-in-down">Organic goodness you can trust for your family’s health.</p>
+            </div>
+        </div>
+    </div>
+     <!-- Arrow Controls -->
+     <button class="carousel-control prev">&#10094;</button>
+     <button class="carousel-control next">&#10095;</button>
+     <!-- Dots Navigation -->
+     <div class="carousel-dots">
+         <span class="dot active"></span>
+         <span class="dot"></span>
+         <span class="dot"></span>
+         <span class="dot"></span>
+     </div>
+ </section>
+
+
+    <!-- Promotional Section -->
+    <section class="promo">
+        <h2>Special Offer!</h2>
+        <p>Get 20% off on your first purchase! <strong>Limited time only!</strong></p>
+        <button onclick="window.location.href='shop.html'">Shop Now</button>
+
+    </section>
+   <!-- Countdown Timer Section -->
+<section class="countdown-banner">
+    <h1>Limited Time Sale! <strong> Grab Your Favorites Now!</strong></h1>
+    <div id="countdown-timer">
+        <div class="time-unit">
+            <span class="label">Days</span>
+            <span id="days" class="time">00</span>
+        </div>
+        <div class="time-unit">
+            <span class="label">Hours</span>
+            <span id="hours" class="time">00</span>
+        </div>
+        <div class="time-unit">
+            <span class="label">Minutes</span>
+            <span id="minutes" class="time">00</span>
+        </div>
+        <div class="time-unit">
+            <span class="label">Seconds</span>
+            <span id="seconds" class="time">00</span>
+        </div>
+    </div>
+</section>
+
+<!-- Sale Products Section -->
+
+<section id="sale-products" class="sale-container">
+    <div class="scroll-container">
+        <div class="productlist" id="sale-list"></div>
+    </div>
+    <!-- Sale products will be dynamically inserted here -->
+</section>
+
+    
+    
+    <!-- 🔹 Featured Products Section -->
+<section id="featured-products" class="product-section">
+    <h2>Featured Products</h2>
+    <div class="scroll-container">
+        <div class="product-list" id="featured-list"></div>
+    </div>
+</section>
+<section class="highlights-section">
+    <!-- First Set of Features -->
+    <div class="highlight-item">
+        <i class="fas fa-leaf"></i>
+        <h3>100% Organic</h3>
+        <p>Grown naturally without harmful chemicals.</p>
+    </div>
+    <div class="highlight-item">
+        <i class="fas fa-shipping-fast"></i>
+        <h3>Fast Delivery</h3>
+        <p>Fresh produce delivered to your doorstep.</p>
+    </div>
+   
+    
+    <div class="highlight-item">
+        <i class="fas fa-smile"></i>
+        <h3>Customer Satisfaction</h3>
+        <p>Trusted by thousands of happy customers.</p>
+    </div>
+
+    <!-- New Features -->
+    <div class="highlight-item">
+        <i class="fas fa-seedling"></i>
+        <h3>Farm-to-Table</h3>
+        <p>From our farm straight to your table with no middlemen.</p>
+    </div>
+   
+    <div class="highlight-item">
+        <i class="fas fa-user-friends"></i>
+        <h3>Family Legacy</h3>
+        <p>A legacy of farming excellence passed through generations.</p>
+    </div>
+   
+    <div class="highlight-item">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Harvested to Order</h3>
+        <p>Your produce is freshly picked only when ordered.</p>
+    </div>
+</section>
+
+
+<!-- 🔹 Shop by Categories Section -->
+<section id="shop-by-category">
+    <h2>Shop by Category</h2>
+    <div class="category-container">
+        <a href="apples.html" class="category-box">Apples</a>
+        <a href="cherries.html" class="category-box">Cherries</a>
+        <a href="strawberries.html" class="category-box">Strawberries</a>
+        <a href="shop.html" class="category-box">More Categories</a>
+        <!-- Add more categories if needed -->
+    </div>
+</section>
+
+
+    <!-- Farm Story Section -->
+    <section class="farm-story">
+        <div class="background-image"></div>
+        <div class="content">
+        <h2>"From Our Hills to Your Home: A Journey of Freshness"</h2>
+        <p>Welcome to our farm's new journey! Nestled in the scenic hills of Khadrala, Shimla, at an altitude of 10,000 feet, we’re excited to introduce our farm’s fresh, organic apples to you through our brand new online store. Growing apples has been our passion for many years, and now, with our e-store, we're bringing the taste of our farm directly to your doorstep.
+
+            We’ve always believed in natural farming methods, and our apples are grown without the use of harmful chemicals or pesticides.</p>
+        </div>
+         <div class="image-scrollbar">
+                <img src="assets/images/IMG_0021-2.jpg" alt="Apple Variety 1">
+                <img src="assets/images/strawberyy , blueberyy , cherry in 3 diffrent images respectively give one by one.jpg" alt="Apple Variety 2">
+            <img src="assets/images/IMG_0036.jpg" alt="Apple Variety 3">
+            </div>
+       
+            <div class="content">
+            <p> We take great pride in handpicking each apple at its peak ripeness, ensuring you get the freshest, most flavorful apples possible. Our commitment to quality and sustainability is at the heart of everything we do, and now we’re able to share that with you more easily than ever.
+            Thank you for supporting our farm and being part of this exciting new beginning. We hope you enjoy the apples as much as we enjoy growing them!</p>
+        </div>
+    </section>
+  
+
+    <section class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial-scrollbar">
+            <div class="testimonial">
+                <img src="assets/images/strawberyy , blueberyy , cherry in 3 diffrent images respectively give one by one.jpg" alt="Customer 1 Photo" class="testimonial-img">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <h4><strong>Richa S.</strong></h4>
+                <p>"The freshest apples I've ever tasted! Truly farm-to-table and amazing quality."</p>
+            </div>
+            <div class="testimonial">
+                <img src="assets/images/IMG_0036.jpg" alt="Customer 2 Photo" class="testimonial-img">
+                <div class="stars">⭐⭐⭐⭐</div>
+                <h4><strong>Arjun M.</strong></h4>
+                <p>"Quick delivery and fantastic quality. The apples tasted so fresh!"</p>
+            </div>
+            <div class="testimonial">
+                <img src="assets/images/str.jpg" alt="Customer 3 Photo" class="testimonial-img">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <h4><strong>Kavita T.</strong></h4>
+                <p>"The sustainable packaging and pesticide-free produce won me over."</p>
+            </div>
+        </div>
+    </section>
+    <section class="slogan-bottom"><p>"Discover <strong>nature's treasures</strong>—fresh fruits from the<strong> Himalayan heights</strong>, delivered with care and love."</p></section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms & Conditions</a></li>
+                </ul>
+            </div>
+    
+            <!-- Customer Support -->
+            <div class="footer-support">
+                <h3>Customer Support</h3>
+                <ul>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="help.html">Help Center</a></li>
+                    <li><a href="returns.html">Return Policy</a></li>
+                </ul>
+            </div>
+    
+            <!-- Social Media -->
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#" target="_blank" class="social-icon"><i class="fab fa-twitter"></i> Twitter</a>
+                </div>
+            </div>
+    
+            <!-- Environmental Commitment -->
+            <div class="footer-eco">
+                <h3>Sustainability</h3>
+                <p>Proudly promoting sustainable farming practices to protect our planet.</p>
+            </div>
+        </div>
+    
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <p>&copy; 2025 Fresh Apples Store | All Rights Reserved</p>
+    
+        </div>
+    </footer>
+    
+
+<script src="assets/header.js"></script>    
+<script src="assets/home.js"></script>
+</body>
+</html>

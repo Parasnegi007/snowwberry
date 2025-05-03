@@ -1,0 +1,305 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap');
+
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #ffffff; /* Soft, creamy pastel yellow */
+    color: #5A3C2E; /* Smooth brown tone for readability */
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+}
+/* Apply background image with low opacity */
+body {
+    background-image: url('images/Untitled-2.png'); /* Replace with the image URL or file path */
+    background-size: cover; /* Ensure the image covers the entire body */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position:center; /* Center the image */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    
+    /* Add overlay for opacity effect */
+    position: relative; /* Set relative position for overlay */
+}
+
+body::before {
+    content: ""; /* Required for pseudo-element */
+    position: absolute;
+filter: opacity(0.1);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Position behind the body content */
+}
+
+
+.fruit-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.fruit {
+    position: absolute;
+    font-size: 24px;
+    opacity: 0.8;
+    animation: fallFruits linear infinite;
+}
+
+/* Keyframes for Falling Animation */
+@keyframes fallFruits {
+    0% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+
+
+/* Fixed Header with Frosted Glass Effect */
+/* Default (Relative State) Styling */
+header {
+    display: flex;
+    justify-content: space-between; /* Ensure consistent alignment */
+    align-items: center; /* Maintain vertical alignment */
+    padding: 5px 40px; /* Set consistent padding */
+    background:  #ffffff; /* Background for both states */
+    position: relative; /* Default state */
+    width: 100%; /* Ensure width is fixed */
+    height: 80px; /* Consistent height */
+    box-sizing: border-box; /* Prevent padding/margin inconsistencies */
+    z-index: 1000; /* Ensure visibility */
+    overflow: hidden;
+    border-bottom: solid 2px  #cb1919 ; /* Ensure consistent border */
+    transition: background-color 0.3s ease, height 0.3s ease; /* Smooth transitions */
+  }
+  
+ 
+  
+/* Centered Logo */
+.logo {
+    flex: 1;
+    color: #343434;
+    display: flex;
+    position: absolute;
+    top: 22px;
+    left: 50vw;
+    transform: translateX(-50%);
+}
+.marquee-container{
+    background:  #cb1919;
+}
+.marquee {
+    color: white;
+    margin-top: 0%;
+    display: flex; /* Keeps text inline */
+    gap: 60px; /* Adds spacing between text lines */
+    overflow: hidden; /* Ensures text stays within the container */
+    white-space: nowrap; /* Prevents text wrapping */
+    animation: move-train 20s linear infinite; /* Creates continuous scrolling */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.marquee h8, .marquee h9 {
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+@keyframes move-train {
+    from {
+        transform: translateX(100%); /* Start off-screen on the right */
+    }
+    to {
+        transform: translateX(-100%); /* Move off-screen on the left */
+    }
+}
+
+.container {
+    width: 100%; /* Occupies full width */
+    overflow: hidden; /* Prevents text from spilling out */
+}
+
+@media (max-width: 768px) {
+    .marquee {
+        display: flex;
+        gap: 50px; /* Space between texts */
+        overflow: hidden;
+        white-space: nowrap;
+        animation: move-train 15s linear infinite;
+        width: 200%; /* Make the container wide enough to display full text */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .marquee {
+        display: flex;
+        gap: 50px; /* Space between texts */
+        overflow: hidden;
+        white-space: nowrap;
+        animation: move-train 20s linear infinite;
+        width: 100%; /* Make the container wide enough to display full text */
+    }
+}
+
+.intro-section h8 {
+    position: relative;
+    font-size: 13px;
+    color: #ffffff; /* Minimal heading color */
+    margin-bottom: 0px;
+   
+}
+.intro-section h9 {
+    position: relative;
+    font-size: 13px;
+    color: #ffffff; /* Minimal heading color */
+    margin-bottom: 0px;
+   
+}
+/* Ensure body and html take full height */
+html, body {
+    height: auto;
+    margin: 0;
+    padding: 0;
+    overflow-y:auto;
+    width: 100vw;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Make the main content section expand to push footer down */
+.container {
+    flex: 1;
+}
+
+/* Signup Form Section */
+.signup-container {
+    max-width: 500px;
+    margin: 100px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #333;
+}
+
+/* Title */
+.signup-container h2 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+/* Form Styling */
+#signup-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label Styling */
+label {
+    text-align: left;
+    font-size: 15px;
+    margin-top: 12px;
+    color: #444;
+    font-weight: 500;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.3);
+    font-size: 15px;
+    transition: all 0.3s;
+    color: #222;
+}
+
+/* Focus Effect */
+input:focus {
+    border-color: #28a745;
+    outline: none;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.5);
+}
+
+/* Show Password Checkbox */
+#show-password {
+    margin-top: 5px;
+    cursor: pointer;
+    width: fit-content;
+    align-self: center;
+}
+
+/* OTP Section */
+#otp-section {
+    margin-top: 12px;
+}
+
+/* Buttons */
+button {
+    background-color :#28a745; 
+    border:transparent 3px solid;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 5px;
+    transition: ease-in-out 0.3s;
+    width: 100%;
+    padding: 14px;
+    font-size: 17px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Button Hover */
+button:hover {
+    background: white;
+    color: #28a745; 
+    border-color: #28a745; 
+    box-shadow: 0px 5px 15px rgba(10, 48, 6, 0.4);
+    transform: translateY(-2px);
+}
+
+
+/* Disabled Signup Button */
+#signup-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Login Link */
+.signup-container p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-container a {
+    color: #28a745;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-container a:hover {
+    text-decoration: underline;
+}
