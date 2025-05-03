@@ -97,6 +97,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-  
+  window.onload = async function () {
+  document.body.classList.add("loading"); // Lock interactions immediately
+
+  async function checkBackend() {
+    try {
+      const response = await fetch('https://snowberry.onrender.com/healthcheck');
+      if (response.ok) {
+        setTimeout(() => {
+          document.getElementById("loader").style.display = "none";
+          document.body.classList.remove("loading"); // Unlock scroll & clicks
+        }, 500); // Small delay for smooth transition
+      } else {
+        console.log("Backend not ready yet...");
+        setTimeout(checkBackend, 3000); // Retry after 3 seconds
+      }
+    } catch (error) {
+      console.log("Waiting for backend...", error);
+      setTimeout(checkBackend, 3000); // Retry after 3 seconds
+    }
+  }
+
+  checkBackend(); // Start checking when everything loads
+};
+
 // ✅ Call on page load
 document.addEventListener("DOMContentLoaded", updateCartCount);
