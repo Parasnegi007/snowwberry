@@ -6,6 +6,41 @@ html {
     scroll-behavior: smooth;
 }
 
+body.loading {
+    overflow: hidden !important; /* Force scroll lock */
+    position: fixed; /* Prevent scrolling completely */
+    width: 100%;
+    height: 100%;
+  }
+  
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #3498db;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+
 body {
     background: #ffffff; /* Soft, creamy pastel yellow */
     color: #5A3C2E; /* Smooth brown tone for readability */
