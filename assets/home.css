@@ -39,8 +39,8 @@ body.loading {
     position: absolute;
     bottom: 20px;
     margin-bottom: 30vh;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: lighter;
     color: black;
     text-align: center;
     width: 100%;
