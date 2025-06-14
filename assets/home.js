@@ -369,6 +369,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleScroll(); // Trigger effect on page load
     
 });
-
+window.onload = async function () {
+  document.body.classList.add("loading"); // Lock interactions immediately
 
 
