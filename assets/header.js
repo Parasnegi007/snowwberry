@@ -99,8 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 const BACKEND_URL = 'https://snowberry.onrender.com/healthcheck';
 
-window.onload = async function () {
-  document.body.classList.add("loading"); // Lock interactions immediately
+
 
   async function checkBackend() {
     try {
